@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Accessibility-First Developer Dashboard
 
-## Getting Started
+A responsive, enterprise-grade data dashboard built to strict WCAG 2.1 AA standards. This project visualizes developer metrics while prioritizing inclusive design, keyboard navigation, and screen reader compatibility.
 
-First, run the development server:
+## 🚀 Tech Stack
+* **Framework:** Next.js (App Router)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS v4
+* **Data Visualization:** Recharts
+* **A11y Testing:** Axe-Core
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ♿ Accessibility (A11y) Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Unlike standard dashboards that render charts as invisible `<canvas>` or `<svg>` elements to assistive technologies, this dashboard was built with a strict accessibility-first mindset:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **Screen Reader Fallbacks:** Every visual Recharts component is paired with a visually hidden (`sr-only`) HTML data table. Screen readers seamlessly bypass the visual chart and read the tabular data.
+* **Full Keyboard Navigation:** All interactive elements, including sidebar links, time-range filters, and theme toggles, are fully navigable via `Tab`, `Enter`, and `Space`. Focus rings are strictly defined.
+* **Skip to Main Content:** A visually hidden skip link is injected at the root level, allowing keyboard users to bypass repetitive navigation links.
+* **Semantic HTML & ARIA:** Heavy use of native semantic elements (`<nav>`, `<main>`, `<aside>`) and precise ARIA attributes (`aria-pressed`, `aria-current`, `aria-hidden`) to communicate application state.
+* **High Contrast Mode:** In addition to standard Light/Dark modes, a strict High-Contrast theme is included to maximize readability for visually impaired users.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Running Locally
 
-## Learn More
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run the development server: `npm run dev`
+4. Open [http://localhost:3000](http://localhost:3000)
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Note: In development mode, `@axe-core/react` runs automatically and reports any accessibility violations directly to the browser console.*
