@@ -20,11 +20,5 @@ Unlike standard dashboards that render charts as invisible `<canvas>` or `<svg>`
 * **Semantic HTML & ARIA:** Heavy use of native semantic elements (`<nav>`, `<main>`, `<aside>`) and precise ARIA attributes (`aria-pressed`, `aria-current`, `aria-hidden`) to communicate application state.
 * **High Contrast Mode:** In addition to standard Light/Dark modes, a strict High-Contrast theme is included to maximize readability for visually impaired users.
 
-## 🛠️ Running Locally
-
-1. Clone the repository
-2. Install dependencies: `npm install`
-3. Run the development server: `npm run dev`
-4. Open [http://localhost:3000](http://localhost:3000)
 
 *Note: In development mode, `@axe-core/react` runs automatically and reports any accessibility violations directly to the browser console.*
